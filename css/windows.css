@@ -1,0 +1,61 @@
+.window {
+    position: absolute;
+    width: 480px;
+    min-height: 300px;
+    background: rgba(25, 20, 40, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(160, 120, 255, 0.28);
+    border-radius: 14px;
+    box-shadow: 0 12px 26px rgba(0,0,0,0.35);
+    overflow: hidden;
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+.window-header {
+    height: 38px;
+    background: rgba(40, 30, 60, 0.6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+    cursor: grab;
+    user-select: none;
+    border-bottom: 1px solid rgba(140, 100, 230, 0.25);
+}
+
+.window-header:active {
+    cursor: grabbing;
+}
+
+.window-title {
+    font-size: 14px;
+    color: #e6d8ff;
+    letter-spacing: 0.5px;
+}
+
+.window-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.win-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.win-close  { background: #ff5f5f; }
+.win-min    { background: #ffbd4a; }
+.win-max    { background: #29c941; }
+
+.window-content {
+    padding: 15px;
+    color: #ddd;
+    font-size: 14px;
+}

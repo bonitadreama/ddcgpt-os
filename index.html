@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DDCGPT OS</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/windows.css" />
+    <link rel="stylesheet" href="css/assistant.css" />
+    <link rel="stylesheet" href="css/files.css" />
+    <link rel="stylesheet" href="css/desktop.css" />
+</head>
+
+<body>
+    <!-- CONTEXT MENU -->
+    <div id="context-menu">
+        <div class="ctx-item" id="ctx-new-file">New File</div>
+        <div class="ctx-item" id="ctx-new-folder">New Folder</div>
+        <div class="ctx-item" id="ctx-refresh">Refresh</div>
+    </div>
+
+    <!-- TOP BAR -->
+    <div id="topbar">
+        <div class="brand">
+            <span>DDCGPT OS</span>
+            <span class="project-status">Work in progress</span>
+        </div>
+        <div class="status-area">
+            <span id="time"></span>
+            <span class="status-icon">🔊</span>
+            <span class="status-icon">📶</span>
+            <span class="status-icon">🔋100%</span>
+            <span class="username" id="profile-name">User</span>
+        </div>
+    </div>
+
+    <!-- DESKTOP -->
+    <div id="desktop"></div>
+
+    <!-- DOCK -->
+    <div id="dock">
+        <div class="dock-icon" id="dock-assistant" title="Assistant"><img src="icons/assistant.svg" alt="assistant"/></div>
+        <div class="dock-icon" id="dock-search" title="Search"><img src="icons/search.svg" alt="search"/></div>
+        <div class="dock-icon" id="dock-files" title="Files"><img src="icons/files.svg" alt="files"/></div>
+        <div class="dock-icon" id="dock-photos" title="Photos"><img src="icons/photos.svg" alt="photos"/></div>
+        <div class="dock-icon" id="dock-browser" title="Browser"><img src="icons/browser.svg" alt="browser"/></div>
+        <div class="dock-icon" id="dock-memories" title="Memories"><img src="icons/memories.svg" alt="memories"/></div>
+        <div class="dock-icon" id="dock-settings" title="Settings"><img src="icons/settings.svg" alt="settings"/></div>
+
+    </div>
+
+    <script type="module" src="js/os.js"></script>
+    <script type="module">
+    import { initFileSystem } from "./js/filesystem.js";
+    import { initDesktop } from "./js/desktop.js";
+
+    initFileSystem();
+    initDesktop();
+</script>
+
+    
+    <!-- WINDOW LAYER -->
+<div id="window-layer"></div>
+<script type="module" src="js/dock.js"></script>
+
+</body>
+</html>

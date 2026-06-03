@@ -1,0 +1,33 @@
+.files-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.files-toolbar {
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    background: rgba(35, 25, 60, 0.5);
+    border-bottom: 1px solid rgba(140, 120, 255, 0.3);
+}
+
+#files-list {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.file-item {
+    padding: 6px 10px;
+    margin-bottom: 5px;
+    border-radius: 6px;
+    background: rgba(25, 20, 45, 0.5);
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.file-item:hover {
+    background: rgba(70, 60, 120, 0.6);
+    border: 1px solid rgba(150, 120, 255, 0.4);
+}

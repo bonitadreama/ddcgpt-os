@@ -1,0 +1,21 @@
+#context-menu {
+    position: absolute;
+    background: rgba(30, 20, 50, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(150,120,255,0.3);
+    border-radius: 6px;
+    display: none;
+    flex-direction: column;
+    min-width: 150px;
+    z-index: 9999;
+}
+
+.ctx-item {
+    padding: 10px;
+    cursor: pointer;
+    color: #e6ddff;
+}
+
+.ctx-item:hover {
+    background: rgba(80,60,140,0.4);
+}

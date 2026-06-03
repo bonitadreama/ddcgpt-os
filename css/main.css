@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: radial-gradient(ellipse at center, #1b0f24, #0a0610);
+    height: 100vh;
+    overflow: hidden;
+    color: #e5d9ff;
+}
+
+/* TOP BAR */
+#topbar {
+    height: 40px;
+    background: rgba(25, 20, 35, 0.7);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    color: #cfc3ff;
+    border-bottom: 1px solid rgba(120, 80, 200, 0.25);
+}
+
+.brand {
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+
+.project-status {
+    padding: 3px 8px;
+    border: 1px solid rgba(180, 150, 255, 0.35);
+    border-radius: 999px;
+    background: rgba(120, 80, 200, 0.18);
+    color: #d9ccff;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0;
+    white-space: nowrap;
+}
+
+.status-area {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.username {
+    opacity: 0.8;
+}
+
+/* DOCK */
+#dock {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(30, 25, 45, 0.6);
+    backdrop-filter: blur(14px);
+    padding: 10px 15px;
+    border-radius: 18px;
+    display: flex;
+    gap: 12px;
+    border: 1px solid rgba(150, 120, 255, 0.25);
+}
+
+.dock-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #7a4fff, #b38aff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform .15s ease, box-shadow .2s ease;
+}
+
+.dock-icon img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.45));
+}
+
+.dock-icon:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(160, 110, 255, 0.45);
+}
+
+/* DESKTOP */
+#desktop {
+    width: 100%;
+    height: calc(100vh - 40px);
+    background: url('../images/wallpaper.jpg') center/cover no-repeat;
+    opacity: 0.85;
+}
