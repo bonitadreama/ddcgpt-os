@@ -1,6 +1,8 @@
 .window {
     position: absolute;
     width: 480px;
+    max-width: calc(100vw - 32px);
+    max-height: calc(100vh - 104px);
     min-height: 300px;
     background: rgba(25, 20, 40, 0.85);
     backdrop-filter: blur(12px);
@@ -58,4 +60,21 @@
     padding: 15px;
     color: #ddd;
     font-size: 14px;
+    max-height: calc(100vh - 170px);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+@media (max-width: 560px) {
+    .window {
+        left: 16px !important;
+        right: auto;
+        width: min(360px, calc(100vw - 32px));
+        max-height: calc(100vh - 240px);
+        box-sizing: border-box;
+    }
+
+    .window-content {
+        max-height: calc(100vh - 300px);
+    }
 }

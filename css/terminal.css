@@ -1,0 +1,52 @@
+.terminal-app {
+    height: 100%;
+    min-height: 310px;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    background: #070a10;
+    color: #d8f7e8;
+    font-family: "Cascadia Mono", "Consolas", monospace;
+    font-size: 13px;
+}
+
+.terminal-output {
+    min-height: 0;
+    overflow: auto;
+    padding: 14px;
+    line-height: 1.55;
+}
+
+.terminal-line {
+    min-height: 20px;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.terminal-prompt {
+    color: #77d8ff;
+    font-weight: 700;
+}
+
+.terminal-input-row {
+    min-height: 42px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px;
+    align-items: center;
+    border-top: 1px solid rgba(119, 216, 255, 0.22);
+    background: rgba(255, 255, 255, 0.04);
+    padding: 0 14px;
+}
+
+.terminal-input {
+    min-width: 0;
+    border: 0;
+    background: transparent;
+    color: #ffffff;
+    font: inherit;
+    outline: none;
+}
+
+.terminal-input::selection {
+    background: rgba(119, 216, 255, 0.3);
+}

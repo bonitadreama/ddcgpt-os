@@ -1,0 +1,139 @@
+.changelog-app {
+    min-height: 430px;
+    display: grid;
+    gap: 18px;
+    color: #f4efff;
+}
+
+.changelog-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+    border-bottom: 1px solid rgba(199, 181, 255, 0.16);
+    padding-bottom: 14px;
+}
+
+.changelog-kicker {
+    margin: 0 0 5px;
+    color: rgba(216, 202, 255, 0.72);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.changelog-header h2 {
+    margin: 0;
+    font-size: 26px;
+    letter-spacing: 0;
+}
+
+.changelog-live {
+    flex: 0 0 auto;
+    border: 1px solid rgba(119, 216, 255, 0.36);
+    border-radius: 999px;
+    background: rgba(38, 182, 209, 0.12);
+    color: #baf4ff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 9px;
+}
+
+.changelog-lanes {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.changelog-lane {
+    min-width: 0;
+    border-left: 2px solid rgba(119, 216, 255, 0.48);
+    background: rgba(255, 255, 255, 0.045);
+    padding: 11px 12px;
+}
+
+.changelog-lane span {
+    display: block;
+    color: #77d8ff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.changelog-lane strong {
+    display: block;
+    margin-top: 6px;
+    font-size: 13px;
+}
+
+.changelog-lane p,
+.changelog-timeline p {
+    margin: 5px 0 0;
+    color: rgba(238, 231, 255, 0.72);
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+.changelog-timeline {
+    min-height: 0;
+}
+
+.changelog-timeline h3 {
+    margin: 0 0 10px;
+    color: rgba(244, 239, 255, 0.86);
+    font-size: 13px;
+    letter-spacing: 0;
+}
+
+.changelog-timeline ol {
+    display: grid;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.changelog-timeline li {
+    display: grid;
+    grid-template-columns: 92px 1fr;
+    gap: 14px;
+    border-top: 1px solid rgba(199, 181, 255, 0.12);
+    padding: 12px 0;
+}
+
+.changelog-timeline time {
+    color: rgba(216, 202, 255, 0.62);
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+}
+
+.changelog-timeline strong {
+    display: block;
+    font-size: 14px;
+}
+
+@media (max-width: 560px) {
+    .changelog-app {
+        min-height: 520px;
+    }
+
+    .changelog-header {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .changelog-live {
+        width: fit-content;
+    }
+
+    .changelog-lanes,
+    .changelog-timeline li {
+        grid-template-columns: 1fr;
+    }
+
+    .changelog-timeline li {
+        gap: 5px;
+    }
+}

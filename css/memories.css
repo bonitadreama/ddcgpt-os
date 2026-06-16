@@ -1,0 +1,323 @@
+.memories-window {
+    width: min(680px, calc(100vw - 48px));
+    min-height: 540px;
+}
+
+.memories-window .window-content {
+    padding: 0;
+    min-height: 502px;
+}
+
+.memories-app {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.85fr) minmax(290px, 1.15fr);
+    min-height: 502px;
+    color: #f4efff;
+}
+
+.memories-sidebar {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    border-right: 1px solid rgba(155, 130, 255, 0.22);
+    background: rgba(18, 14, 32, 0.45);
+}
+
+.memories-search-row {
+    display: flex;
+    gap: 8px;
+    padding: 12px;
+    border-bottom: 1px solid rgba(155, 130, 255, 0.18);
+}
+
+#memory-search,
+.memory-title-input,
+.memory-meta-grid input,
+.memory-body-input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(175, 150, 255, 0.28);
+    border-radius: 6px;
+    background: rgba(11, 8, 20, 0.72);
+    color: #f8f3ff;
+    outline: none;
+}
+
+#memory-search {
+    min-width: 0;
+    padding: 9px 10px;
+}
+
+#memory-search:focus,
+.memory-title-input:focus,
+.memory-meta-grid input:focus,
+.memory-body-input:focus {
+    border-color: rgba(206, 187, 255, 0.72);
+    box-shadow: 0 0 0 3px rgba(122, 79, 255, 0.18);
+}
+
+#memory-new,
+#memory-save,
+.memory-filter,
+.memory-danger,
+.memory-actions button {
+    border: 1px solid rgba(180, 155, 255, 0.35);
+    border-radius: 6px;
+    background: rgba(58, 45, 92, 0.86);
+    color: #f6f0ff;
+    cursor: pointer;
+    font: inherit;
+}
+
+#memory-new {
+    width: 38px;
+    flex: 0 0 38px;
+    font-size: 20px;
+    line-height: 1;
+}
+
+#memory-new:hover,
+#memory-save:hover,
+.memory-filter:hover,
+.memory-danger:hover,
+.memory-actions button:hover {
+    background: rgba(88, 70, 140, 0.95);
+}
+
+.memory-filters {
+    display: flex;
+    gap: 7px;
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(155, 130, 255, 0.18);
+}
+
+.memory-filter {
+    padding: 6px 9px;
+    font-size: 12px;
+}
+
+.memory-filter.is-active {
+    background: linear-gradient(135deg, rgba(122, 79, 255, 0.95), rgba(179, 138, 255, 0.76));
+    border-color: rgba(224, 211, 255, 0.52);
+}
+
+.memory-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.memory-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px;
+    margin-bottom: 8px;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    background: rgba(34, 27, 55, 0.68);
+    color: inherit;
+    cursor: pointer;
+    text-align: left;
+}
+
+.memory-item:hover,
+.memory-item.is-selected {
+    background: rgba(72, 58, 116, 0.78);
+    border-color: rgba(172, 144, 255, 0.5);
+}
+
+.memory-item-title {
+    font-size: 14px;
+    font-weight: 650;
+    line-height: 1.25;
+}
+
+.memory-item-excerpt {
+    display: -webkit-box;
+    overflow: hidden;
+    color: #cfc4e8;
+    font-size: 12px;
+    line-height: 1.35;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.memory-item-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    color: #aa9bce;
+    font-size: 11px;
+}
+
+.memory-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.memory-tags span {
+    max-width: 100%;
+    overflow: hidden;
+    padding: 3px 6px;
+    border-radius: 5px;
+    background: rgba(122, 79, 255, 0.2);
+    color: #ded4ff;
+    font-size: 11px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.memory-empty {
+    padding: 16px 10px;
+    color: #b9acd7;
+}
+
+.memory-editor {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+    gap: 10px;
+    overflow: hidden;
+    padding: 12px;
+}
+
+.memory-editor-header,
+.memory-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.memory-editor-header > div {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.memory-editor-label {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 650;
+}
+
+.memory-path {
+    max-width: 100%;
+    overflow: hidden;
+    color: #bfb2e2;
+    font: 12px Consolas, "Courier New", monospace;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.memory-danger {
+    flex: 0 0 auto;
+    padding: 7px 10px;
+    border-color: rgba(255, 120, 150, 0.34);
+    background: rgba(94, 37, 63, 0.72);
+}
+
+.memory-danger:disabled {
+    cursor: default;
+    opacity: 0.45;
+}
+
+.memory-title-input {
+    padding: 11px 12px;
+    font-size: 18px;
+    font-weight: 650;
+}
+
+.memory-body-input {
+    flex: 1;
+    min-height: 170px;
+    resize: none;
+    padding: 12px;
+    font: 14px/1.5 Consolas, "Courier New", monospace;
+}
+
+.memory-meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.memory-meta-grid label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: #d7caff;
+    font-size: 12px;
+}
+
+.memory-meta-grid input {
+    padding: 9px 10px;
+    font-size: 13px;
+}
+
+.memory-status {
+    min-width: 0;
+    overflow: hidden;
+    color: #c9bee8;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.memory-actions {
+    display: flex;
+    flex: 0 0 auto;
+    gap: 8px;
+}
+
+.memory-actions button {
+    padding: 9px 10px;
+}
+
+.state-import-input {
+    display: none;
+}
+
+#memory-save {
+    flex: 0 0 auto;
+    padding: 9px 12px;
+    background: linear-gradient(135deg, rgba(122, 79, 255, 0.95), rgba(179, 138, 255, 0.78));
+}
+
+@media (max-width: 720px) {
+    .memories-window {
+        width: calc(100vw - 28px);
+        left: 14px !important;
+    }
+
+    .memories-app {
+        grid-template-columns: 1fr;
+    }
+
+    .memories-sidebar {
+        max-height: 240px;
+        border-right: 0;
+        border-bottom: 1px solid rgba(155, 130, 255, 0.22);
+    }
+
+    .memory-meta-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .memory-footer {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .memory-actions {
+        width: 100%;
+    }
+
+    .memory-actions button {
+        flex: 1;
+    }
+}

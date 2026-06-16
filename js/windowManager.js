@@ -3,8 +3,9 @@ let zIndexCounter = 10;
 export function createWindow(title, contentHTML) {
     const win = document.createElement("div");
     win.className = "window";
-    win.style.left = "200px";
-    win.style.top = "120px";
+    const viewportWidth = window.innerWidth;
+    win.style.left = viewportWidth <= 560 ? "16px" : "200px";
+    win.style.top = viewportWidth <= 560 ? "64px" : "120px";
     win.style.zIndex = zIndexCounter++;
 
     win.innerHTML = `
@@ -36,8 +37,12 @@ export function createWindow(title, contentHTML) {
 
     document.addEventListener("mousemove", (e) => {
         if (!isDragging) return;
-        win.style.left = `${e.clientX - offsetX}px`;
-        win.style.top  = `${e.clientY - offsetY}px`;
+        const maxLeft = Math.max(0, window.innerWidth - win.offsetWidth - 8);
+        const maxTop = Math.max(40, window.innerHeight - header.offsetHeight - 8);
+        const nextLeft = Math.min(Math.max(8, e.clientX - offsetX), maxLeft);
+        const nextTop = Math.min(Math.max(48, e.clientY - offsetY), maxTop);
+        win.style.left = `${nextLeft}px`;
+        win.style.top  = `${nextTop}px`;
     });
 
     document.addEventListener("mouseup", () => {

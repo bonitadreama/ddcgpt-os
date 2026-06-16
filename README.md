@@ -1,19 +1,26 @@
 # DDCGPT OS
 
-DDCGPT OS is a work-in-progress browser-based desktop prototype.
+DDCGPT OS is a public work-in-progress browser-based desktop prototype.
 
 It currently includes:
 
 - A desktop shell with a top bar and dock
 - Draggable app windows
-- A ChatGPT assistant window placeholder
 - A local virtual file system powered by IndexedDB
-- A Files app with file creation and listing
-- Placeholder windows for future Search, Photos, Browser, Memories, and Settings apps
+- A Files app with IndexedDB-backed file and folder CRUD
+- A Memories app that saves searchable local memory notes into the IndexedDB file system
+- Import/export controls for moving local Files and Memories data between browsers or sessions
+- A command palette and terminal for opening apps and running local prototype commands
+- A ChatGPT assistant window shell
+- Early shells for future Photos, Browser, and Settings work
 
 ## Status
 
-This project is public while still actively evolving. Some features are intentionally unfinished, and several dock apps are placeholders for planned functionality.
+This project is public while still actively evolving. The current WIP is usable as a local browser desktop: Files can create, edit, rename, delete, export, and import IndexedDB-backed files and folders, and Memories can create, search, tag, save, delete, export, and import local memory notes. Some dock apps are still early shells while the OS layer grows around the working local data tools.
+
+## Local Data Import/Export
+
+Use the Export button in Files or Memories to download a dated `ddcgpt-os-export-*.json` package. Use Import in another browser or session to replace the current local IndexedDB Files and Memories data with that package.
 
 ## Run Locally
 
@@ -31,8 +38,7 @@ http://127.0.0.1:8765/index.html
 
 ## Next Features
 
-- Expand the Files app with edit, delete, rename, and folder support
+- Add drag-and-drop file organization inside the Files app
 - Add persistent user profile settings
-- Build a Memories app backed by the local file system
 - Improve window controls with minimize and maximize
-- Connect the assistant placeholder to real AI functionality
+- Connect the assistant shell to real AI functionality

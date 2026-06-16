@@ -1,6 +1,4 @@
-import { createWindow } from "./windowManager.js";
-import { getFilesAppHTML, initFilesApp } from "./apps/files.js";
-import { saveFile } from "./filesystem.js";
+import { createFolder, saveFile } from "./filesystem.js?v=files-crud-3";
 
 export function initDesktop() {
     const desktop = document.getElementById("desktop");
@@ -28,8 +26,12 @@ export function initDesktop() {
         }
     };
 
-    document.getElementById("ctx-new-folder").onclick = () => {
-        alert("Folders coming soon!"); // You can expand this later
+    document.getElementById("ctx-new-folder").onclick = async () => {
+        const name = prompt("New folder name?");
+        if (name) {
+            await createFolder(`/${name}`);
+            alert("Folder created.");
+        }
     };
 
     document.getElementById("ctx-refresh").onclick = () => {

@@ -4,10 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DDCGPT OS</title>
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/windows.css" />
+    <link rel="stylesheet" href="css/main.css?v=changelog-1" />
+    <link rel="stylesheet" href="css/windows.css?v=window-mobile-4" />
     <link rel="stylesheet" href="css/assistant.css" />
-    <link rel="stylesheet" href="css/files.css" />
+    <link rel="stylesheet" href="css/files.css?v=portable-2" />
+    <link rel="stylesheet" href="css/memories.css?v=portable-2" />
+    <link rel="stylesheet" href="css/terminal.css?v=terminal-1" />
+    <link rel="stylesheet" href="css/changelog.css?v=changelog-1" />
     <link rel="stylesheet" href="css/desktop.css" />
 </head>
 
@@ -51,8 +54,8 @@
 
     <script type="module" src="js/os.js"></script>
     <script type="module">
-    import { initFileSystem } from "./js/filesystem.js";
-    import { initDesktop } from "./js/desktop.js";
+    import { initFileSystem } from "./js/filesystem.js?v=portable-2";
+    import { initDesktop } from "./js/desktop.js?v=files-crud-3";
 
     initFileSystem();
     initDesktop();
@@ -61,7 +64,7 @@
     
     <!-- WINDOW LAYER -->
 <div id="window-layer"></div>
-<script type="module" src="js/dock.js"></script>
+<script type="module" src="js/dock.js?v=portable-2"></script>
 
 </body>
 </html>
